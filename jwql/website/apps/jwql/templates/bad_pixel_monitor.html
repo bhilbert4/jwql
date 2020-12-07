@@ -21,6 +21,25 @@
 		<!--Add Bokeh scripts-->
 		{{ tabs_components[1] | safe }}
 
+		<!--Render the bad pixel database table-->
+		<table id="jwqltable" class="display" style="width:100%">
+            <thead>
+                <tr>
+                    {% for column in db_table_columns %}
+                        <th>{{ column }}</th>
+                    {% endfor %}
+                </tr>
+            </thead>
+            <tbody>
+                {% for row in db_table_rows %}
+                    <tr>
+                        {% for value in row %}
+                            <td>{{ value }}</td>
+                        {% endfor %}
+                    </tr>
+                {% endfor %}
+            </tbody>
+
 	</main>
 
 {% endblock %}

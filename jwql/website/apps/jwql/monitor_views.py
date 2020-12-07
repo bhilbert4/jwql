@@ -32,6 +32,7 @@ import os
 from django.shortcuts import render
 
 from . import bokeh_containers
+from . import data_containers
 from jwql.utils.constants import JWST_INSTRUMENT_NAMES_MIXEDCASE
 from jwql.utils.utils import get_config
 
@@ -58,12 +59,16 @@ def bad_pixel_monitor(request, inst):
     inst = JWST_INSTRUMENT_NAMES_MIXEDCASE[inst.lower()]
 
     tabs_components = bokeh_containers.bad_pixel_monitor_tabs(inst)
+    badpix_dbtable = data_containers.build_table('{}_BAD_PIXEL_STATS'.format(inst.upper()))
 
     template = "bad_pixel_monitor.html"
 
     context = {
         'inst': inst,
         'tabs_components': tabs_components,
+        'db_table': badpix_dbtable,
+        'db_table_columns': db_table.columns.values,
+        'db_table_rows': db_table.values
     }
 
     # Return a HTTP response with the template and dictionary of variables
