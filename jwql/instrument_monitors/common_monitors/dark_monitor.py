@@ -718,7 +718,7 @@ class Dark():
         self.query_end = Time.now().mjd
 
         # Loop over all instruments
-        for instrument in JWST_INSTRUMENT_NAMES:
+        for instrument in ['nirspec']:  # JWST_INSTRUMENT_NAMES:
             self.instrument = instrument
 
             # Identify which database tables to use
@@ -739,6 +739,13 @@ class Dark():
                 # Locate the record of the most recent MAST search
                 self.aperture = aperture
                 self.query_start = self.most_recent_search()
+
+
+                # For testing
+                self.query_start = 57000.
+
+
+
                 logging.info('\tQuery times: {} {}'.format(self.query_start, self.query_end))
 
                 # Query MAST using the aperture and the time of the
