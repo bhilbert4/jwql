@@ -896,6 +896,15 @@ def get_proposal_info(filepaths):
             num_files.append(len(files_for_proposal))
             proposals.append(proposal)
 
+    # Sort by decreasing proposal ID number.
+    prop_arr = np.array(proposals)
+    thumb_paths_arr = np.array(thumbnail_paths)
+    num_files_arr = np.array(num_files)
+    sort_idx = np.argsort(prop_arr)
+    proposals = list(prop_arr[sort_idx])
+    thumbnail_paths = list(thumb_paths_arr[sort_idx])
+    num_files = list(num_files_arr[sort_idx])
+
     # Put the various information into a dictionary of results
     proposal_info = {}
     proposal_info['num_proposals'] = len(proposals)
@@ -1291,6 +1300,9 @@ def thumbnails_ajax(inst, proposal=None):
 
         # Get list of available filenames
         available_files = [item for item in filenames if rootname in item]
+
+        # Sort by detector name
+        available_files = sorted(available_files)
 
         # Add data to dictionary
         data_dict['file_data'][rootname] = {}

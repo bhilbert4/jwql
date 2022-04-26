@@ -12,7 +12,7 @@
  * @param {Dict} num_ints - A dictionary whose keys are suffix types and whose
  *                          values are the number of integrations for that suffix
  * @param {Dict} available_ints - A dictionary whose keys are suffix types and whose
- *                                values are the integration numbers of the available 
+ *                                values are the integration numbers of the available
  *                                jpgs for that suffix
  * @param {String} inst - The instrument for the given file
  */
@@ -76,7 +76,7 @@ function change_filetype(type, file_root, num_ints, available_ints, inst) {
  * @param {Dict} num_ints - A dictionary whose keys are suffix types and whose
  *                          values are the number of integrations for that suffix
  * @param {Dict} available_ints - A dictionary whose keys are suffix types and whose
- *                                values are the integration numbers of the available 
+ *                                values are the integration numbers of the available
  *                                jpgs for that suffix
  * @param {String} method - How the integration change was initialized, either "button" or "slider"
  * @param {String} direction - The direction to switch to, either "left" (decrease) or "right" (increase).
@@ -458,9 +458,9 @@ function update_sort_options(data) {
     // Build div content
     content = 'Sort by:';
     content += '<div class="dropdown">';
-    content += '<button class="btn btn-primary dropdown-toggle" type="button" id="sort_dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Default</button>';
+    content += '<button class="btn btn-primary dropdown-toggle" type="button" id="sort_dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Most Recent</button>';
     content += '<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">';
-    content += '<a class="dropdown-item" href="#" onclick="sort_by_thumbnails(\'Default\');">Default</a>';
+    content += '<a class="dropdown-item" href="#" onclick="sort_by_thumbnails(\'Default\');">Most Recent</a>';
     content += '<a class="dropdown-item" href="#" onclick="sort_by_thumbnails(\'Name\');">Name</a>';
     content += '<a class="dropdown-item" href="#" onclick="sort_by_thumbnails(\'Exposure Start Time\');">Exposure Start Time</a>';
     content += '</div></div>';
