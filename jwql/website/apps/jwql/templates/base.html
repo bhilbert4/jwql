@@ -20,12 +20,12 @@
 
 		<!-- Needed javascript -->
 		<!-- IMPORTANT: jQuery first, then popper, then Bootstrap -->
-		<script src="{{ static('js/jquery-3.3.1.min.js') }}?{% now 'U' %}"></script>
-		<script src="{{ static('js/tinysort.min.js') }}?{% now 'U' %}"></script>
+		<script src="{{ static('js/jquery-3.3.1.min.js') }}?{% now 'U' %}" async></script>
+		<script src="{{ static('js/tinysort.min.js') }}?{% now 'U' %}" async></script>
 	    <script type="text/javascript" src="https://cdn.bokeh.org/bokeh/release/bokeh-{{ bokeh_version }}.min.js"></script>
 	    <script src="https://cdn.bokeh.org/bokeh/release/bokeh-widgets-{{ bokeh_version }}.min.js"></script>
 		<script type="text/javascript" src="https://cdn.bokeh.org/bokeh/release/bokeh-tables-{{ bokeh_version }}.min.js"></script>
-		<script src="{{ static('js/jwql.js') }}?{% now 'U' %}"></script>
+		<script src="{{ static('js/jwql.js') }}?{% now 'U' %}" async></script>
 
 		{% block preamble %}
         {% endblock %}
